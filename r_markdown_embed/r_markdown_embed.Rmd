@@ -1,0 +1,71 @@
+---
+title: "Vega tests"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(vegalite)
+library(jsonlite)
+```
+
+```{r}
+json_file <- "https://vega.github.io/vega-editor/app/data/cars.json"
+json_data <- fromJSON(json_file, flatten = TRUE)
+
+
+```
+
+
+Output 1
+
+```{r, fig.height=10, fig.width=10}
+vegalite() %>% 
+  add_data(json_data) %>% 
+  encode_x("Horsepower") %>% 
+  encode_y("Miles_per_Gallon") %>% 
+  encode_color("Origin", "nominal") %>% 
+  mark_point()
+
+
+```
+End Output 1
+
+Output 2
+
+```{r}
+vegalite() %>% 
+  cell_size(500,500) %>%
+  add_data("https://vega.github.io/vega-editor/app/data/cars.json") %>% 
+  encode_x("Horsepower") %>% 
+  encode_y("Miles_per_Gallon") %>% 
+  encode_color("Origin", "nominal") %>% 
+  mark_point()
+```
+End Output 2
+
+Output 3
+
+
+```{r}
+vegalite() %>% 
+  add_data("https://vega.github.io/vega-editor/app/data/cars.json") %>% 
+  encode_x("Horsepower") %>% 
+  encode_y("Miles_per_Gallon") %>% 
+  encode_color("Origin", "nominal") %>% 
+  mark_point()
+```
+End Output 3
+
+Output 4
+
+
+```{r}
+vegalite() %>% 
+  add_data("https://vega.github.io/vega-editor/app/data/cars.json") %>% 
+  encode_x("Horsepower") %>% 
+  encode_y("Miles_per_Gallon") %>% 
+  encode_color("Origin", "nominal") %>% 
+  mark_point()
+```
+End Output 4
