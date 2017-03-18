@@ -69,3 +69,5 @@ vegalite() %>%
   mark_point()
 ```
 End Output 4
+
+Issue in the repo:  https://github.com/hrbrmstr/vegalite/issues/20
